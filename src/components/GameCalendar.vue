@@ -19,7 +19,8 @@ const getTasksForDay = (day) => {
 
 // 获取某天的生日
 const getBirthday = (day) => {
-  return birthdayData[day];
+  const seasonBirthdays = birthdayData[props.season] || {};
+  return seasonBirthdays[day];
 };
 
 // 获取某天的节日
@@ -132,7 +133,7 @@ const getNPCGiftInfo = (npcName) => {
         <span class="text-[10px] text-gray-400 font-semibold">{{ n }}</span>
 
         <!-- 生日标记 -->
-        <div v-if="getBirthday(n)" class="absolute top-1 right-1 text-[10px]" title="生日">
+        <div v-if="getBirthday(n)" class="absolute top-1 right-1 text-[10px]" :title="getBirthday(n).map(b => b.name).join('、') + '的生日'">
           🎂
         </div>
 
@@ -232,62 +233,66 @@ const getNPCGiftInfo = (npcName) => {
     <div v-if="getBirthday(activeDay)" class="mt-3 p-3 bg-pink-50 border border-pink-300 rounded text-xs">
       <div class="font-semibold text-pink-700 mb-2 flex items-center gap-2">
         <span>🎂</span>
-        <span>第{{ activeDay }}天 - {{ getBirthday(activeDay).name }}的生日</span>
+        <span>第{{ activeDay }}天 - {{ getBirthday(activeDay).map(b => b.name).join('、') }}的生日</span>
       </div>
       
-      <div v-if="getNPCGiftInfo(getBirthday(activeDay).name)" class="space-y-2">
-        <!-- 最爱礼物 -->
-        <div>
-          <div class="font-semibold text-red-600 mb-1">❤️ 最爱礼物（+80点，生日+8倍）：</div>
-          <div class="flex flex-wrap gap-1">
-            <span 
-              v-for="gift in getNPCGiftInfo(getBirthday(activeDay).name).loves" 
-              :key="gift"
-              class="px-2 py-0.5 bg-red-100 rounded text-xs border border-red-300"
-            >
-              {{ gift }}
-            </span>
+      <!-- 循环显示每个生日NPC的礼物信息 -->
+      <div v-for="(birthday, idx) in getBirthday(activeDay)" :key="idx" class="mb-4 pb-3 border-b border-pink-200 last:border-0 last:mb-0 last:pb-0">
+        <div v-if="getNPCGiftInfo(birthday.name)" class="space-y-2">
+          <div class="font-semibold text-pink-600">{{ birthday.name }}的礼物偏好：</div>
+          
+          <!-- 最爱礼物 -->
+          <div>
+            <div class="font-semibold text-red-600 mb-1">❤️ 最爱礼物（+80点，生日+8倍）：</div>
+            <div class="flex flex-wrap gap-1">
+              <span 
+                v-for="gift in getNPCGiftInfo(birthday.name).loves" 
+                :key="gift"
+                class="px-2 py-0.5 bg-red-100 rounded text-xs border border-red-300"
+              >
+                {{ gift }}
+              </span>
+            </div>
+          </div>
+          
+          <!-- 喜欢礼物 -->
+          <div>
+            <div class="font-semibold text-green-600 mb-1">👍 喜欢礼物（+45点）：</div>
+            <div class="flex flex-wrap gap-1">
+              <span 
+                v-for="gift in getNPCGiftInfo(birthday.name).likes" 
+                :key="gift"
+                class="px-2 py-0.5 bg-green-100 rounded text-xs border border-green-300"
+              >
+                {{ gift }}
+              </span>
+            </div>
+          </div>
+          
+          <!-- 讨厌礼物 -->
+          <div v-if="getNPCGiftInfo(birthday.name).hates.length > 0">
+            <div class="font-semibold text-gray-600 mb-1">❌ 讨厌礼物：</div>
+            <div class="flex flex-wrap gap-1">
+              <span 
+                v-for="gift in getNPCGiftInfo(birthday.name).hates" 
+                :key="gift"
+                class="px-2 py-0.5 bg-gray-200 rounded text-xs border border-gray-300"
+              >
+                {{ gift }}
+              </span>
+            </div>
           </div>
         </div>
         
-        <!-- 喜欢礼物 -->
-        <div>
-          <div class="font-semibold text-green-600 mb-1">👍 喜欢礼物（+45点）：</div>
-          <div class="flex flex-wrap gap-1">
-            <span 
-              v-for="gift in getNPCGiftInfo(getBirthday(activeDay).name).likes" 
-              :key="gift"
-              class="px-2 py-0.5 bg-green-100 rounded text-xs border border-green-300"
-            >
-              {{ gift }}
-            </span>
-          </div>
-        </div>
-        
-        <!-- 讨厌礼物 -->
-        <div v-if="getNPCGiftInfo(getBirthday(activeDay).name).hates.length > 0">
-          <div class="font-semibold text-gray-600 mb-1">❌ 讨厌礼物：</div>
-          <div class="flex flex-wrap gap-1">
-            <span 
-              v-for="gift in getNPCGiftInfo(getBirthday(activeDay).name).hates" 
-              :key="gift"
-              class="px-2 py-0.5 bg-gray-200 rounded text-xs border border-gray-300"
-            >
-              {{ gift }}
-            </span>
-          </div>
-        </div>
-        
-        <!-- 提示 -->
-        <div class="mt-2 pt-2 border-t border-pink-200 text-pink-600 text-[10px]">
-          💡 生日当天送礼好感度+8倍，建议送最爱礼物！
+        <!-- 如果没有找到NPC礼物信息 -->
+        <div v-else class="text-pink-600">
+          <div class="font-semibold mb-1">{{ birthday.name }}的礼物信息未找到</div>
         </div>
       </div>
       
-      <!-- 如果没有找到NPC礼物信息，显示基础信息 -->
-      <div v-else class="text-pink-600">
-        <div class="font-semibold mb-1">推荐礼物：</div>
-        <div class="text-[10px]">{{ getBirthday(activeDay).gift }}</div>
+      <!-- 提示 -->
+      <div class="mt-2 pt-2 border-t border-pink-200 text-pink-600 text-[10px]">
+        💡 生日当天送礼好感度+8倍，建议送最爱礼物！
       </div>
     </div>
     
