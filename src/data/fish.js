@@ -1,23 +1,88 @@
 // 各季节鱼类数据
 export const fish = {
   春: [
-    { name: "太阳鱼", time: "6am-7pm", weather: "晴", location: "小镇/森林河流", note: "抛竿中距离，鱼速中等" },
-    { name: "鲶鱼", time: "全天", weather: "雨", location: "河流/秘密森林池塘", note: "鱼速快，雨天限定" },
-    { name: "西鲱", time: "9am-2am", weather: "雨", location: "河流", note: "鱼速快，雨天限定" },
-    { name: "鳗鱼", time: "4pm-2am", weather: "雨", location: "海洋", note: "平滑型，咬钩快" }
+    { name: "太阳鱼", time: "6:00-19:00", weather: "晴天/风", location: "河流（小镇+森林）", difficulty: 30, use: "社区中心河鱼收集包；制作烤鱼", position: "河流小镇区域格子", type: "普通鱼类" },
+    { name: "鲶鱼", time: "6:00-0:00", weather: "雨天", location: "河流（小镇+森林）、秘密森林池塘、巫婆沼泽", difficulty: 75, use: "社区中心河鱼收集包；威利最爱", position: "秘密森林池塘格子", type: "普通鱼类" },
+    { name: "西鲱", time: "6:00-19:00", weather: "任意", location: "海洋", difficulty: 50, use: "海鱼收集包", position: "海滩左侧区域格子", type: "普通鱼类" },
+    { name: "鳗鱼", time: "16:00-2:00", weather: "雨天", location: "海洋", difficulty: 70, use: "制作炒鳗鱼、香辣鳗鱼；阿比盖尔最爱", position: "海滩中间区域格子", type: "普通鱼类" },
+    { name: "虹鳟", time: "6:00-19:00", weather: "任意", location: "河流（小镇+森林）、深山湖泊", difficulty: 45, use: "社区中心献祭（鱼类收集包）；制作鳟鱼汤", position: "河流森林区域格子", type: "普通鱼类" },
+    { name: "小嘴鲈鱼", time: "任意时间", weather: "任意", location: "河流（小镇）、煤矿森林池塘", difficulty: 28, use: "社区中心河鱼收集包", position: "煤矿森林池塘格子", type: "普通鱼类" },
+    { name: "木跃鱼", time: "6:00-19:00", weather: "任意", location: "河流（小镇）", difficulty: 40, use: "社区中心河鱼收集包", position: "河流小镇区域格子", type: "普通鱼类" },
+    { name: "红鲷鱼", time: "6:00-19:00", weather: "雨天", location: "海洋", difficulty: 40, use: "海鱼收集包", position: "海滩中间区域格子", type: "普通鱼类" }
   ],
   夏: [
-    { name: "虹鳟鱼", time: "6am-7pm", weather: "晴", location: "森林/山区河流", note: "混合型，控条稳" },
-    { name: "河豚", time: "12pm-4pm", weather: "晴", location: "海洋", note: "冲刺型，难度高" },
-    { name: "章鱼", time: "6am-1pm", weather: "任意", location: "海洋", note: "中速，易钓" }
+    { name: "虹鳟", time: "6:00-19:00", weather: "任意", location: "河流（小镇+森林）、深山湖泊", difficulty: 45, use: "社区中心献祭（鱼类收集包）；制作鳟鱼汤", position: "河流森林区域格子", type: "普通鱼类" },
+    { name: "章鱼", time: "6:00-13:00", weather: "任意", location: "海洋、姜岛海洋", difficulty: 95, use: "钓鱼大师收集包；威利最爱", position: "姜岛海洋东北区域格子", type: "普通鱼类" },
+    { name: "绯红鱼", time: "16:00-22:00", weather: "雨天", location: "海滩", difficulty: 85, use: "传说鱼收集任务；1.6鳟鱼大赛禁用", position: "海滩最右侧格子（坐标x:110 y:30）", type: "传说鱼类" },
+    { name: "鳟鱼", time: "6:00-19:00", weather: "任意", location: "河流（小镇区域）", difficulty: 30, use: "1.6鳟鱼大赛指定鱼类（3分钟钓重量最高获胜，奖励钓鱼帽）", position: "河流小镇区域中间格子", type: "1.6新增鱼类" },
+    { name: "太阳鱼", time: "6:00-19:00", weather: "晴天/风", location: "河流（小镇+森林）", difficulty: 30, use: "社区中心河鱼收集包；制作烤鱼", position: "河流小镇区域格子", type: "普通鱼类" },
+    { name: "鲶鱼", time: "6:00-0:00", weather: "雨天", location: "河流（小镇+森林）、秘密森林池塘、巫婆沼泽", difficulty: 75, use: "社区中心河鱼收集包；威利最爱", position: "秘密森林池塘格子", type: "普通鱼类" },
+    { name: "狗鱼", time: "任意时间", weather: "任意", location: "河流（小镇+森林）、煤矿森林池塘", difficulty: 60, use: "高级鱼收集包；制作爆炒青椒（谢恩最爱）", position: "煤矿森林池塘格子", type: "普通鱼类" },
+    { name: "红鲻鱼", time: "6:00-19:00", weather: "任意", location: "海洋", difficulty: 55, use: "海鱼收集包；制作海之菜肴", position: "海滩左侧区域格子", type: "普通鱼类" },
+    { name: "金枪鱼", time: "6:00-19:00", weather: "任意", location: "海滩、姜岛海洋", difficulty: 70, use: "制作海鲜拼盘（+3钓鱼buff）；海鱼收集包", position: "海滩中间区域格子", type: "普通鱼类" },
+    { name: "鲟鱼", time: "6:00-19:00", weather: "任意", location: "深山湖泊", difficulty: 78, use: "社区中心湖鱼收集包；威利最爱", position: "深山湖泊中心格子", type: "普通鱼类" },
+    { name: "麻哈脂鲤", time: "6:00-19:00", weather: "任意", location: "河流（小镇）", difficulty: 55, use: "社区中心河鱼收集包", position: "河流小镇区域格子", type: "普通鱼类" },
+    { name: "青花鱼", time: "6:00-19:00", weather: "任意", location: "海洋", difficulty: 60, use: "海鱼收集包", position: "海滩中间区域格子", type: "普通鱼类" },
+    { name: "黄貂鱼", time: "6:00-19:00", weather: "任意", location: "海洋", difficulty: 85, use: "特色鱼类收集包", position: "海滩右侧区域格子", type: "普通鱼类" },
+    { name: "蓝铁饼鱼", time: "6:00-19:00", weather: "任意", location: "海洋", difficulty: 75, use: "特色鱼类收集包", position: "海滩左侧区域格子", type: "普通鱼类" },
+    { name: "罗非鱼", time: "6:00-19:00", weather: "任意", location: "姜岛河流", difficulty: 60, use: "姜岛专属鱼类；制作烤鱼", position: "姜岛河流中间格子", type: "1.6新增鱼类" },
+    { name: "虾虎鱼", time: "6:00-18:00", weather: "任意", location: "煤矿森林瀑布下方", difficulty: 40, use: "1.6版本新增；制作虾鸡尾酒", position: "煤矿森林瀑布下方格子（坐标x:85 y:70）", type: "1.6新增鱼类" }
   ],
   秋: [
-    { name: "大眼鱼", time: "12pm-2am", weather: "雨", location: "淡水区", note: "雨天限定" },
-    { name: "安康鱼", time: "全天", weather: "任意", location: "小镇河流最北", note: "需钓鱼3级" }
+    { name: "太阳鱼", time: "6:00-19:00", weather: "晴天/风", location: "河流（小镇+森林）", difficulty: 30, use: "社区中心河鱼收集包；制作烤鱼", position: "河流小镇区域格子", type: "普通鱼类" },
+    { name: "鲶鱼", time: "6:00-0:00", weather: "雨天", location: "河流（小镇+森林）、秘密森林池塘、巫婆沼泽", difficulty: 75, use: "社区中心河鱼收集包；威利最爱", position: "秘密森林池塘格子", type: "普通鱼类" },
+    { name: "虹鳟", time: "6:00-19:00", weather: "任意", location: "河流（小镇+森林）、深山湖泊", difficulty: 45, use: "社区中心献祭（鱼类收集包）；制作鳟鱼汤", position: "河流森林区域格子", type: "普通鱼类" },
+    { name: "鲑鱼", time: "6:00-19:00", weather: "任意", location: "河流（小镇+森林）、煤矿森林瀑布", difficulty: 65, use: "社区中心献祭（鱼类收集包）；制作鲑鱼晚餐（亚历克斯最爱）", position: "煤矿森林瀑布下方格子", type: "普通鱼类" },
+    { name: "狗鱼", time: "任意时间", weather: "任意", location: "河流（小镇+森林）、煤矿森林池塘", difficulty: 60, use: "高级鱼收集包；制作爆炒青椒（谢恩最爱）", position: "煤矿森林池塘格子", type: "普通鱼类" },
+    { name: "红鲻鱼", time: "6:00-19:00", weather: "任意", location: "海洋", difficulty: 55, use: "海鱼收集包；制作海之菜肴", position: "海滩左侧区域格子", type: "普通鱼类" },
+    { name: "红鲷鱼", time: "6:00-19:00", weather: "雨天", location: "海洋", difficulty: 40, use: "海鱼收集包", position: "海滩中间区域格子", type: "普通鱼类" },
+    { name: "蛇齿单线鱼", time: "6:00-19:00", weather: "任意", location: "海洋", difficulty: 65, use: "海鱼收集包", position: "海滩右侧区域格子", type: "普通鱼类" },
+    { name: "大比目鱼", time: "6:00-19:00", weather: "任意", location: "海洋", difficulty: 70, use: "海鱼收集包", position: "海滩中间区域格子", type: "普通鱼类" },
+    { name: "虎纹鳟鱼", time: "6:00-19:00", weather: "任意", location: "河流（小镇+森林）", difficulty: 60, use: "社区中心河鱼收集包；稀有杂交鱼类", position: "河流森林区域格子", type: "普通鱼类" },
+    { name: "午夜鲤鱼", time: "22:00-2:00", weather: "任意", location: "深山湖泊、煤矿森林池塘、姜岛池塘", difficulty: 55, use: "制作海泡布丁", position: "深山湖泊码头右侧格子", type: "普通鱼类" },
+    { name: "狮子鱼", time: "6:00-19:00", weather: "任意", location: "海洋", difficulty: 80, use: "特色鱼类收集包", position: "海滩中间区域格子", type: "普通鱼类" }
   ],
   冬: [
-    { name: "鱿鱼", time: "6pm-2am", weather: "任意", location: "海洋", note: "中速" },
-    { name: "冰川鱼", time: "全天", weather: "晴", location: "矿井池塘", note: "铱竿+鱼饵，难度高" }
+    { name: "冰川鱼", time: "6:00-16:00", weather: "雪天", location: "深山湖泊", difficulty: 90, use: "传说鱼收集任务；钓鱼大师收集包", position: "深山湖泊码头左侧第二格（坐标x:45 y:12）", type: "传说鱼类" },
+    { name: "冰柱鱼", time: "6:00-17:00", weather: "任意", location: "深山湖泊", difficulty: 80, use: "传说鱼收集任务；钓鱼大师收集包", position: "深山湖泊码头最左端格子（坐标x:42 y:12）", type: "传说鱼类" },
+    { name: "鱿鱼", time: "18:00-2:00", weather: "任意", location: "海洋", difficulty: 75, use: "制作鱿鱼墨汁；艾利欧特最爱", position: "海滩码头区域格子", type: "普通鱼类" },
+    { name: "冬季鱿鱼", time: "18:00-2:00", weather: "任意", location: "海滩", difficulty: 50, use: "1.6冬季鱿鱼节指定鱼类（收集5条换鱿鱼帽）；制作鱿鱼墨汁", position: "海滩码头区域右侧格子", type: "1.6新增鱼类" },
+    { name: "狗鱼", time: "任意时间", weather: "任意", location: "河流（小镇+森林）、煤矿森林池塘", difficulty: 60, use: "高级鱼收集包；制作爆炒青椒（谢恩最爱）", position: "煤矿森林池塘格子", type: "普通鱼类" },
+    { name: "红鲻鱼", time: "6:00-19:00", weather: "任意", location: "海洋", difficulty: 55, use: "海鱼收集包；制作海之菜肴", position: "海滩左侧区域格子", type: "普通鱼类" },
+    { name: "金枪鱼", time: "6:00-19:00", weather: "任意", location: "海滩、姜岛海洋", difficulty: 70, use: "制作海鲜拼盘（+3钓鱼buff）；海鱼收集包", position: "海滩中间区域格子", type: "普通鱼类" },
+    { name: "鲟鱼", time: "6:00-19:00", weather: "任意", location: "深山湖泊", difficulty: 78, use: "社区中心湖鱼收集包；威利最爱", position: "深山湖泊中心格子", type: "普通鱼类" },
+    { name: "红鲷鱼", time: "6:00-19:00", weather: "雨天", location: "海洋", difficulty: 40, use: "海鱼收集包", position: "海滩中间区域格子", type: "普通鱼类" },
+    { name: "虎纹鳟鱼", time: "6:00-19:00", weather: "任意", location: "河流（小镇+森林）", difficulty: 60, use: "社区中心河鱼收集包；稀有杂交鱼类", position: "河流森林区域格子", type: "普通鱼类" },
+    { name: "午夜鲤鱼", time: "22:00-2:00", weather: "任意", location: "深山湖泊、煤矿森林池塘、姜岛池塘", difficulty: 55, use: "制作海泡布丁", position: "深山湖泊码头右侧格子", type: "普通鱼类" },
+    { name: "水滴鱼", time: "17:00-24:00", weather: "任意", location: "夜市鱼缸（冬季15-17日）", difficulty: 80, use: "夜市专属鱼类；可捐赠博物馆", position: "夜市鱼缸中心格子", type: "1.6新增鱼类" }
+  ],
+  任意季节: [
+    { name: "岩浆鳗鱼", time: "任意时间", weather: "任意", location: "矿井100层、火山口", difficulty: 90, use: "钓鱼大师收集包；矮人最爱", position: "矿井100层岩浆池中心格子", type: "传说鱼类" },
+    { name: "蝎鲤鱼", time: "6:00-20:00", weather: "任意", location: "沙漠池塘", difficulty: 90, use: "钓鱼大师收集包；沙漠专属鱼类", position: "沙漠池塘中心格子（坐标x:65 y:45）", type: "传说鱼类" },
+    { name: "传说鱼王", time: "6:00-18:00", weather: "晴天", location: "姜岛海域", difficulty: 95, use: "钓鱼大师称号必备；1.6版本新增传说鱼二代前置", position: "姜岛东北区域（坐标x:120 y:80）", type: "传说鱼类" },
+    { name: "虾虎鱼", time: "6:00-18:00", weather: "任意", location: "煤矿森林瀑布下方", difficulty: 40, use: "1.6版本新增；制作虾鸡尾酒", position: "煤矿森林瀑布下方格子（坐标x:85 y:70）", type: "1.6新增鱼类" },
+    { name: "罗非鱼", time: "6:00-19:00", weather: "任意", location: "姜岛河流", difficulty: 60, use: "姜岛专属鱼类；制作烤鱼", position: "姜岛河流中间格子", type: "1.6新增鱼类" },
+    { name: "大嘴鲈鱼", time: "6:00-19:00", weather: "任意", location: "深山湖泊", difficulty: 50, use: "社区中心湖鱼收集包、优质鱼收集包；制作香酥鲈鱼", position: "深山湖泊中心格子", type: "普通鱼类" },
+    { name: "大头鱼", time: "任意时间", weather: "任意", location: "深山湖泊", difficulty: 46, use: "社区中心湖鱼收集包", position: "深山湖泊左侧格子", type: "普通鱼类" },
+    { name: "虚空鲑鱼", time: "6:00-19:00", weather: "任意", location: "巫婆沼泽", difficulty: 80, use: "钓鱼大师收集包；科罗布斯最爱", position: "巫婆沼泽中心格子", type: "普通鱼类" },
+    { name: "史莱姆鱼", time: "任意时间", weather: "任意", location: "矿井10层、史莱姆掉落", difficulty: 40, use: "特色鱼类收集包", position: "矿井史莱姆区域格子", type: "普通鱼类" },
+    { name: "幽灵鱼", time: "任意时间", weather: "任意", location: "矿井50层、幽灵掉落", difficulty: 50, use: "特色鱼类收集包", position: "矿井幽灵区域格子", type: "普通鱼类" },
+    { name: "鬼鱼", time: "任意时间", weather: "任意", location: "矿井20层/60层、幽灵掉落", difficulty: 50, use: "特色鱼类收集包；地下湖泊专属", position: "矿井20层地下湖泊格子", type: "普通鱼类" },
+    { name: "石鱼", time: "任意时间", weather: "任意", location: "矿井20层", difficulty: 65, use: "特色鱼类收集包；触碰会造成伤害", position: "矿井20层岩石区域格子", type: "普通鱼类" },
+    { name: "沙鱼", time: "6:00-20:00", weather: "任意", location: "沙漠池塘", difficulty: 65, use: "特色鱼类收集包；潘妮最爱", position: "沙漠池塘右侧格子", type: "普通鱼类" },
+    { name: "比目鱼", time: "6:00-20:00", weather: "任意", location: "海洋、姜岛海洋", difficulty: 50, use: "制作海泡布丁", position: "海滩左侧区域格子", type: "普通鱼类" },
+    { name: "海凝胶", time: "任意时间", weather: "任意", location: "海洋", difficulty: 0, use: "制作特殊物品", position: "海滩任意区域", type: "1.6新增凝胶类" },
+    { name: "河凝胶", time: "任意时间", weather: "任意", location: "河流", difficulty: 0, use: "制作特殊物品", position: "河流任意区域", type: "1.6新增凝胶类" },
+    { name: "洞穴凝胶", time: "任意时间", weather: "任意", location: "矿井", difficulty: 0, use: "制作特殊物品", position: "矿井任意区域", type: "1.6新增凝胶类" },
+    { name: "龙虾", time: "任意时间", weather: "任意", location: "蟹笼（海洋）", difficulty: "无", use: "制作龙虾浓汤；艾利欧特最爱", position: "蟹笼放置海洋任意位置", type: "蟹笼类" },
+    { name: "螃蟹", time: "任意时间", weather: "任意", location: "蟹笼（海洋/海滩）", difficulty: "无", use: "制作蟹黄糕；艾利欧特最爱", position: "蟹笼放置海滩任意位置", type: "蟹笼类" },
+    { name: "蛤", time: "任意时间", weather: "任意", location: "蟹笼（海洋）", difficulty: "无", use: "制作海鲜杂烩汤", position: "蟹笼放置海洋任意位置", type: "蟹笼类" },
+    { name: "鸟蛤", time: "任意时间", weather: "任意", location: "蟹笼（海滩）", difficulty: "无", use: "制作海鲜杂烩汤", position: "蟹笼放置海滩任意位置", type: "蟹笼类" },
+    { name: "蚌", time: "任意时间", weather: "任意", location: "蟹笼（海洋）", difficulty: "无", use: "制作海鲜杂烩汤", position: "蟹笼放置海洋任意位置", type: "蟹笼类" },
+    { name: "虾", time: "任意时间", weather: "任意", location: "蟹笼（海洋）", difficulty: "无", use: "制作虾鸡尾酒", position: "蟹笼放置海洋任意位置", type: "蟹笼类" },
+    { name: "蜗牛", time: "任意时间", weather: "任意", location: "蟹笼（河流）", difficulty: "无", use: "制作法式田螺", position: "蟹笼放置河流任意位置", type: "蟹笼类" },
+    { name: "玉黍螺", time: "任意时间", weather: "任意", location: "蟹笼（海滩）", difficulty: "无", use: "制作海鲜杂烩汤", position: "蟹笼放置海滩任意位置", type: "蟹笼类" },
+    { name: "牡蛎", time: "任意时间", weather: "任意", location: "蟹笼（海洋）", difficulty: "无", use: "制作海鲜杂烩汤", position: "蟹笼放置海洋任意位置", type: "蟹笼类" }
   ]
 };
 

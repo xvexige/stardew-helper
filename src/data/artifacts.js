@@ -17,7 +17,7 @@ export const artifacts = [
   { name: "生锈的靴刺", reward: "无", source: "农场/山区 artifact spot 挖掘、矿井怪物掉落", note: "古代骑马用具，刘易斯喜欢" },
   { name: "生锈的齿轮", reward: "无", source: "矿井20层以上挖掘、机器人怪物掉落", note: "工业时代遗物，玛鲁喜欢" },
   { name: "鸡雕像", reward: "无", source: "农场 artifact spot 挖掘、旅行货车随机售卖", note: "造型可爱，玛妮喜欢" },
-  { name: "古代种子", reward: "解锁"古代种子配方"（可种植上古水果）", source: "矿井挖掘、 artifact spot 挖掘、旅行货车随机售卖", note: "捐赠后获得配方，是游戏中最赚钱的作物之一" },
+  { name: "古代种子", reward: "解锁'古代种子配方'（可种植上古水果）", source: "矿井挖掘、 artifact spot 挖掘、旅行货车随机售卖", note: "捐赠后获得配方，是游戏中最赚钱的作物之一" },
   { name: "史前工具", reward: "无", source: "农场/森林 artifact spot 挖掘、矿井怪物掉落", note: "原始工具，无特殊用途" },
   { name: "干海星", reward: "无", source: "海滩 artifact spot 挖掘、钓鱼宝箱", note: "海洋生物化石，可捐赠博物馆" },
   { name: "锚", reward: "无", source: "海滩 artifact spot 挖掘、钓鱼宝箱（深海区域）", note: "古代船只遗物，威利喜欢" },

@@ -97,14 +97,8 @@ const getProgressPercentage = (task, currentDay) => {
 
 // 根据NPC名称查找礼物喜好信息
 const getNPCGiftInfo = (npcName) => {
-  // 在可攻略NPC中查找
-  const romanceNPC = npcGifts.可攻略.find(npc => npc.name === npcName);
-  if (romanceNPC) {
-    return romanceNPC;
-  }
-  // 在其他NPC中查找
-  const otherNPC = npcGifts.其他.find(npc => npc.name === npcName);
-  return otherNPC || null;
+  // 直接在NPC数组中查找
+  return npcGifts.find(npc => npc.name === npcName) || null;
 };
 </script>
 

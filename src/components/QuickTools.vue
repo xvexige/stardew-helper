@@ -4,6 +4,10 @@ import BundlesView from './BundlesView.vue'
 import FishGuide from './FishGuide.vue'
 import NPCGifts from './NPCGifts.vue'
 import CropsGuide from './CropsGuide.vue'
+import LivestockGuide from './LivestockGuide.vue'
+import TreesGuide from './TreesGuide.vue'
+import ArtifactsGuide from './ArtifactsGuide.vue'
+import CookingGuide from './CookingGuide.vue'
 
 const activeTab = ref('bundles')
 
@@ -11,9 +15,12 @@ const tabs = [
   { id: 'bundles', label: '献祭包', icon: '📦' },
   { id: 'fish', label: '鱼类图鉴', icon: '🐟' },
   { id: 'npc', label: 'NPC礼物', icon: '🎁' },
-  { id: 'crops', label: '作物指南', icon: '🌱' }
-]
-</script>
+  { id: 'crops', label: '作物指南', icon: '🌱' },
+  { id: 'livestock', label: '畜牧指南', icon: '🐾' },
+  { id: 'trees', label: '树木指南', icon: '🌳' },
+  { id: 'artifacts', label: '古物图鉴', icon: '🏺' },
+  { id: 'cooking', label: '食谱指南', icon: '🍳' }
+]</script>
 
 <template>
   <div class="sv-card">
@@ -37,6 +44,10 @@ const tabs = [
       <FishGuide v-if="activeTab === 'fish'" />
       <NPCGifts v-if="activeTab === 'npc'" />
       <CropsGuide v-if="activeTab === 'crops'" />
+      <LivestockGuide v-if="activeTab === 'livestock'" />
+      <TreesGuide v-if="activeTab === 'trees'" />
+      <ArtifactsGuide v-if="activeTab === 'artifacts'" />
+      <CookingGuide v-if="activeTab === 'cooking'" />
     </div>
   </div>
 </template>
