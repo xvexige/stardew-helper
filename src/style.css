@@ -1,0 +1,30 @@
+/* 引入 Tailwind v4 */
+@import "tailwindcss";
+
+/* 这里直接定义星露谷的主题色 */
+@theme {
+  --color-sv-green: #2d5a27;
+  --color-sv-panel: #f4ece4;
+  --color-sv-border: #542d1b;
+}
+@layer components {
+  .sv-button {
+    @apply bg-[#b06a45] text-[#f4ece4] border-2 border-[#542d1b] px-4 py-1 active:translate-y-0.5 hover:bg-[#8e5335] transition-all;
+    box-shadow: inset -2px -2px 0px #542d1b;
+  }
+}
+/* 全局样式 */
+body {
+  @apply bg-sv-green;
+  margin: 0;
+  display: block;
+  min-height: 100vh;
+}
+
+.sv-card {
+  @apply bg-sv-panel border-4 border-sv-border rounded-lg shadow-xl p-4;
+}
+
+.sv-title {
+  @apply text-2xl font-bold text-sv-border mb-4;
+}
