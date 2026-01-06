@@ -28,3 +28,13 @@ body {
 .sv-title {
   @apply text-2xl font-bold text-sv-border mb-4;
 }
+
+/* 毛玻璃效果支持 */
+@supports (backdrop-filter: blur(10px)) {
+  .backdrop-blur-sm {
+    backdrop-filter: blur(4px);
+  }
+  .backdrop-blur-md {
+    backdrop-filter: blur(8px);
+  }
+}
